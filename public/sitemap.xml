@@ -2,24 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://samuelfagundez.github.io/la-finestra/</loc>
+    <loc>https://samuelfagundez.github.io/Madamu-Matcha/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://samuelfagundez.github.io/la-finestra/gallery/la-finestra-pizzas.jpg</image:loc>
-      <image:title>Selección de pizzas artesanales de La Finestra</image:title>
+      <image:loc>https://samuelfagundez.github.io/Madamu-Matcha/gallery/madamu-matcha-iced-matcha-flores.jpg</image:loc>
+      <image:title>Matcha helado de Madamu Matcha con flores de fondo</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://samuelfagundez.github.io/la-finestra/gallery/la-finestra-burrata.jpg</image:loc>
-      <image:title>Pizzeta de burrata fresca de La Finestra</image:title>
+      <image:loc>https://samuelfagundez.github.io/Madamu-Matcha/gallery/madamu-matcha-latte-preparacion.jpg</image:loc>
+      <image:title>Preparación de un matcha latte al momento en Madamu Matcha</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://samuelfagundez.github.io/la-finestra/gallery/la-finestra-tabla.jpg</image:loc>
-      <image:title>Tabla de mini pizzas variadas de La Finestra</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://samuelfagundez.github.io/la-finestra/gallery/la-finestra-fachada.jpg</image:loc>
-      <image:title>Fachada de La Finestra en el Eixample de Valencia</image:title>
+      <image:loc>https://samuelfagundez.github.io/Madamu-Matcha/gallery/madamu-matcha-barra-ingredientes.jpg</image:loc>
+      <image:title>Barra de Madamu Matcha con matcha en polvo y batidor chasen</image:title>
     </image:image>
   </url>
 </urlset>

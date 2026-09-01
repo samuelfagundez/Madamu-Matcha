@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { content, whatsappLink } from "../content";
+import { content, whatsappLink, WHATSAPP_RESERVE_MESSAGE } from "../content";
 
 interface SeoProps {
   title?: string;
@@ -13,9 +13,10 @@ export default function Seo({ title, description, path = "" }: SeoProps) {
     : `${content.name} | ${content.tagline}`;
   const desc = description || content.metaDescription;
   const url = content.siteUrl.replace(/\/$/, "") + path;
-  const image = content.siteUrl.replace(/\/$/, "") + content.gallery[0]?.src;
-
   const base = content.siteUrl.replace(/\/$/, "");
+  const image = content.gallery[0]
+    ? base + content.gallery[0].src
+    : base + "/favicon.svg";
 
   // Entidad WebSite explícita: le da a Google una señal directa e
   // inequívoca del nombre real del sitio para el "breadcrumb" de resultados
@@ -28,9 +29,12 @@ export default function Seo({ title, description, path = "" }: SeoProps) {
     inLanguage: "es",
   };
 
-  const restaurantEntity: Record<string, unknown> = {
-    "@type": "Restaurant",
-    "@id": `${base}/#restaurant`,
+  // Tipo de schema.org más específico para el rubro (cafetería especializada
+  // en matcha), subtipo de FoodEstablishment — por eso servesCuisine sigue
+  // aplicando.
+  const businessEntity: Record<string, unknown> = {
+    "@type": "CafeOrCoffeeShop",
+    "@id": `${base}/#business`,
     isPartOf: { "@id": `${base}/#website` },
     name: content.name,
     description: content.description,
@@ -56,28 +60,26 @@ export default function Seo({ title, description, path = "" }: SeoProps) {
     })),
     // WhatsApp es un canal de chat, no una página de perfil — se excluye
     // de sameAs (que es para identidades) y en cambio se usa como acción
-    // de reserva en acceptsReservations.
+    // de pedido en acceptsReservations.
     sameAs: Object.entries(content.social)
       .filter(([key, value]) => key !== "whatsapp" && value)
       .map(([, value]) => value),
     hasMap: content.mapLinkUrl,
-    acceptsReservations: whatsappLink(
-      "¡Hola! Vengo de la página web de La Finestra y me gustaría hacer una reserva.",
-    ),
+    acceptsReservations: whatsappLink(WHATSAPP_RESERVE_MESSAGE),
     keywords: content.keywords.join(", "),
   };
 
-  if (content.phone) restaurantEntity.telephone = content.phone;
-  if (content.email) restaurantEntity.email = content.email;
+  if (content.phone) businessEntity.telephone = content.phone;
+  if (content.email) businessEntity.email = content.email;
   if (content.geo) {
-    restaurantEntity.geo = {
+    businessEntity.geo = {
       "@type": "GeoCoordinates",
       latitude: content.geo.latitude,
       longitude: content.geo.longitude,
     };
   }
   if (content.rating) {
-    restaurantEntity.aggregateRating = {
+    businessEntity.aggregateRating = {
       "@type": "AggregateRating",
       ratingValue: content.rating.value,
       reviewCount: content.rating.count,
@@ -86,7 +88,7 @@ export default function Seo({ title, description, path = "" }: SeoProps) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [websiteEntity, restaurantEntity],
+    "@graph": [websiteEntity, businessEntity],
   };
 
   return (
@@ -98,7 +100,7 @@ export default function Seo({ title, description, path = "" }: SeoProps) {
       <link rel="canonical" href={url} />
 
       {/* Open Graph */}
-      <meta property="og:type" content="restaurant.restaurant" />
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={desc} />
       <meta property="og:url" content={url} />

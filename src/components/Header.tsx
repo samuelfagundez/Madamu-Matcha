@@ -48,7 +48,7 @@ export default function Header() {
             rel="noreferrer noopener"
             className="btn-primary-sm"
           >
-            Reservar mesa
+            Hacer un pedido
           </a>
         </div>
 
@@ -102,7 +102,7 @@ export default function Header() {
                 className="btn-primary w-full"
                 onClick={() => setOpen(false)}
               >
-                Reservar mesa
+                Hacer un pedido
               </a>
               <a
                 href={contactHref()}

@@ -1,12 +1,9 @@
-import { whatsappLink } from "../content";
-
-const MESSAGE =
-  "¡Hola! Vengo de la página web de La Finestra y me gustaría hacer una reserva.";
+import { whatsappLink, WHATSAPP_RESERVE_MESSAGE } from "../content";
 
 export default function FloatingWhatsApp() {
   return (
     <a
-      href={whatsappLink(MESSAGE)}
+      href={whatsappLink(WHATSAPP_RESERVE_MESSAGE)}
       target="_blank"
       rel="noreferrer noopener"
       aria-label="Escribir por WhatsApp"

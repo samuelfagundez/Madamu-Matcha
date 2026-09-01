@@ -4,11 +4,13 @@
   --font-display: "Playfair Display", "Georgia", serif;
   --font-body: "Inter", "system-ui", sans-serif;
 
-  --color-ink: #1b140f;
-  --color-paper: #fbf7f1;
-  --color-brand: #7a2e2e;
-  --color-brand-dark: #5c2020;
-  --color-gold: #b8863b;
+  /* Paleta extraída de las fotos reales del local: pared verde matcha,
+     bol de cerámica y madera de la barra, y flores/telón crema-cálido. */
+  --color-ink: #241c15;
+  --color-paper: #f7f2e7;
+  --color-brand: #3a4a24;
+  --color-brand-dark: #263117;
+  --color-gold: #9c6c3d;
 }
 
 html {

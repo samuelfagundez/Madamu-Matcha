@@ -1,13 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <path
-    d="M32 57 L10.5 14.5 A24 24 0 0 1 53.5 14.5 Z"
-    fill="#F4B942"
-    stroke="#C97B2E"
+    d="M9 26 Q9 50 32 53 Q55 50 55 26 Z"
+    fill="#F7F2E7"
+    stroke="#9C6C3D"
     stroke-width="4"
     stroke-linejoin="round"
   />
-  <circle cx="32" cy="27" r="5" fill="#A6332F" />
-  <circle cx="24" cy="37" r="4.3" fill="#A6332F" />
-  <circle cx="40" cy="37" r="4.3" fill="#A6332F" />
-  <circle cx="32" cy="47" r="3.8" fill="#A6332F" />
+  <ellipse cx="32" cy="26" rx="23" ry="9" fill="#5B7A3A" stroke="#263117" stroke-width="3" />
+  <path
+    d="M40 18 L49 6"
+    stroke="#9C6C3D"
+    stroke-width="4"
+    stroke-linecap="round"
+  />
+  <circle cx="50.5" cy="5" r="4.5" fill="#9C6C3D" stroke="#263117" stroke-width="2" />
 </svg>
